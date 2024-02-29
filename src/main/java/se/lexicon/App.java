@@ -35,6 +35,7 @@ public class App
             char userInput = scanner.next().charAt(0);
             switch (userInput) {
                 case '1':
+                    calcInput();
                     break;
                 case 'Q':
                     System.out.println("Goodbye!");
@@ -46,4 +47,55 @@ public class App
             }
         }
     }
+    private static void calcInput() {
+        //Asking for user input
+        double calcResult;
+        System.out.print("Enter Input 1: ");
+        double userInput1 = scanner.nextDouble();
+        System.out.print("Enter Operator ( + - * / ) : ");
+        char operator = scanner.next().charAt(0);
+        System.out.print("Enter Input 2: ");
+        double userInput2 = scanner.nextDouble();
+        //Preforming the correct operation
+        switch (operator) {
+            case '+':
+                calcResult = addition(userInput1, userInput2);
+                displayResult(calcResult);
+                break;
+            case '-':
+                calcResult = subtraction(userInput1, userInput2);
+                displayResult(calcResult);
+                break;
+            case '*':
+                calcResult = multiplication(userInput1, userInput2);
+                displayResult(calcResult);
+                break;
+            case '/':
+                calcResult = division(userInput1, userInput2);
+                displayResult(calcResult);
+                break;
+            default:
+                System.out.println("I don't recognize the operator you used");
+                menuScan();
+                break;
+        }
+    }
+    private static void displayResult(double result) {
+        //Display the Result
+        System.out.println("The answer is: "+ result);
+    }
+
+    //Mathematical Methods
+    private static double addition(double selection1, double selection2) {return selection1 + selection2;}
+    private static double subtraction(double selection1, double selection2) {
+        return selection1 - selection2;
+    }
+    private static double multiplication(double selection1, double selection2) {
+        return selection1 * selection2;
+    }
+    private static double division(double selection1, double selection2) { return selection1 / selection2;}
+
+
+
+
 }

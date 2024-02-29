@@ -86,14 +86,12 @@ public class App
     }
 
     //Mathematical Methods
-    public static double addition(double selection1, double selection2) {return selection1 + selection2;}
-    public static double subtraction(double selection1, double selection2) {
-        return selection1 - selection2;
+    public static double addition(double userInput1, double userInput2) {return userInput1 + userInput2;}
+    public static double subtraction(double userInput1, double userInput2) {
+        return userInput1 - userInput2;
     }
-    public static double multiplication(double selection1, double selection2) {
-        return selection1 * selection2;
-    }
-    public static double division(double selection1, double selection2) { return selection1 / selection2;}
+    public static double multiplication(double userInput1, double userInput2) { return userInput1 * userInput2;}
+    public static double division(double userInput1, double userInput2) { return userInput1 / userInput2;}
 
 
 

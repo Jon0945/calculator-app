@@ -42,6 +42,7 @@ public class App
                     keepGoing = false;
                     break;
                 default:
+                    //Exception handling
                     System.out.println("That's not a valid menu choice");
                     break;
             }
@@ -68,13 +69,36 @@ public class App
                 break;
             case '*':
                 calcResult = multiplication(userInput1, userInput2);
+                //Multiply by zero detect
+                if (userInput1 == 0) {
+                    System.out.println("Multiplication by zero is always zero");
+                    menuScan();
+                    break;
+                } else if (userInput2 == 0) {
+                    System.out.println("Multiplication by zero is always zero");
+                    menuScan();
+                    break;
+                }
+                else
                 displayResult(calcResult);
                 break;
             case '/':
                 calcResult = division(userInput1, userInput2);
+                //Divide by zero detect
+                if (userInput1 == 0) {
+                    System.out.println("Division by zero is not allowed");
+                    menuScan();
+                    break;
+                } else if (userInput2 == 0) {
+                    System.out.println("Division by zero is not allowed");
+                    menuScan();
+                    break;
+                }
+                else
                 displayResult(calcResult);
                 break;
             default:
+                //Exception handling
                 System.out.println("I don't recognize the operator you used");
                 menuScan();
                 break;
